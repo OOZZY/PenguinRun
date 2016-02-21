@@ -33,7 +33,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 newPosition = transform.position + movement;
         newPosition.y = 0.25f;
         playerRigidbody.MovePosition(newPosition);
-        playerRigidbody.MoveRotation(new Quaternion());
+
+        playerRigidbody.MoveRotation(new Quaternion(0,0,0,1));
     }
     void Turning()
     {
