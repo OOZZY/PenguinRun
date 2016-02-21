@@ -16,41 +16,41 @@ public class BlockGeneration : MonoBehaviour {
 
 	void SpawnBlock(Vector3 position) {
 		if (Random.Range (0, 100) < 50) {
-			Rigidbody concreteClone = (Rigidbody)Instantiate (concreteBlock, position, new Quaternion ());
-			concreteClone.GetComponent<ConcreteBlockDestruction> ().player = player;
+			Rigidbody concreteBlockClone = (Rigidbody)Instantiate (concreteBlock, position, new Quaternion ());
+			concreteBlockClone.GetComponent<ConcreteBlockDestruction> ().player = player;
 		} else {
-			Rigidbody iceClone = (Rigidbody)Instantiate (iceBlock, position, new Quaternion (0, 0, 0, 1));
-			iceClone.GetComponent<IceBlockDestruction> ().player = player;
+			Rigidbody iceBlockClone = (Rigidbody)Instantiate (iceBlock, position, new Quaternion (0, 0, 0, 1));
+			iceBlockClone.GetComponent<IceBlockDestruction> ().player = player;
 
 			float num = Random.Range (0, 100);
-			Transform toBeCloned = null;
+			Transform child = null;
 			IceBlock.Item item = IceBlock.Item.NONE;
 			Quaternion newQuaternion = new Quaternion (0, 0, 0, 1);
 			if (num < 50) {
 			} else if (num < 60) {
-				toBeCloned = fish;
+				child = fish;
 				item = IceBlock.Item.FISH;
 			} else if (num < 70) {
-				toBeCloned = fishBone;
+				child = fishBone;
 				item = IceBlock.Item.FISH_BONE;
 			} else if (num < 80) {
-				toBeCloned = heart;
+				child = heart;
 				item = IceBlock.Item.HEART;
 			} else if (num < 90) {
-				toBeCloned = skull;
+				child = skull;
 				item = IceBlock.Item.SKULL;
 				newQuaternion.y = -180;
 			} else if (num < 100) {
-				toBeCloned = star;
+				child = star;
 				item = IceBlock.Item.STAR;
 			}
 
-			if (toBeCloned != null) {
-				Transform child = (Transform)Instantiate (toBeCloned, position, newQuaternion);
-				child.parent = iceClone.GetComponent<Transform> ();
+			if (child != null) {
+				Transform childClone = (Transform)Instantiate (child, position, newQuaternion);
+				childClone.parent = iceBlockClone.GetComponent<Transform> ();
 			}
 
-			iceClone.GetComponent<IceBlock> ().item = item;
+			iceBlockClone.GetComponent<IceBlock> ().item = item;
 		}
 	}
 
