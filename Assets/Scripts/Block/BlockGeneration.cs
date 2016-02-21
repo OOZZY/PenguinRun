@@ -24,25 +24,33 @@ public class BlockGeneration : MonoBehaviour {
 
 			float num = Random.Range (0, 100);
 			Transform toBeCloned = null;
+			IceBlock.Item item = IceBlock.Item.NONE;
 			Quaternion newQuaternion = new Quaternion (0, 0, 0, 1);
 			if (num < 50) {
 			} else if (num < 60) {
 				toBeCloned = fish;
+				item = IceBlock.Item.FISH;
 			} else if (num < 70) {
 				toBeCloned = fishBone;
+				item = IceBlock.Item.FISH_BONE;
 			} else if (num < 80) {
 				toBeCloned = heart;
+				item = IceBlock.Item.HEART;
 			} else if (num < 90) {
 				toBeCloned = skull;
+				item = IceBlock.Item.SKULL;
 				newQuaternion.y = -180;
 			} else if (num < 100) {
 				toBeCloned = star;
+				item = IceBlock.Item.STAR;
 			}
 
 			if (toBeCloned != null) {
 				Transform child = (Transform)Instantiate (toBeCloned, position, newQuaternion);
 				child.parent = iceClone.GetComponent<Transform> ();
 			}
+
+			iceClone.GetComponent<IceBlock> ().item = item;
 		}
 	}
 

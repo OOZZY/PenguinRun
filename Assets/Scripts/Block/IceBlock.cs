@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class IceBlock : MonoBehaviour {
+	public enum Item {NONE, FISH, FISH_BONE, HEART, SKULL, STAR};
+	public Item item;
+
     public float sinkSpeed = 2.5f;
     ParticleSystem hitParticles;                // Reference to the particle system that plays when the block is hit.
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
@@ -47,7 +50,6 @@ public class IceBlock : MonoBehaviour {
             playerCollide = true;
  
             playerMovement.IncreaseSpeed((float)+2);
-
         }
     }
     void OnTriggerExit(Collider other)
