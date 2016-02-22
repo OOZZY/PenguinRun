@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class tapStart : MonoBehaviour {
+public class TapStart : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,7 +11,7 @@ public class tapStart : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) {
-			Application.LoadLevel("Gameplay");
+			UnityEngine.SceneManagement.SceneManager.LoadScene ("Level01");
 		}
 	}
 }
