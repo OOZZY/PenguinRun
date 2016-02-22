@@ -95,6 +95,10 @@ public class PlayerHealth : MonoBehaviour {
     public void IncreaseHealth(int ammount)
     {
         currentHealth = currentHealth + ammount;
+        if (currentHealth > 3)
+        {
+            currentHealth = 3;
+        }
         HealthManager.Increasehealth(ammount);
 
     }
