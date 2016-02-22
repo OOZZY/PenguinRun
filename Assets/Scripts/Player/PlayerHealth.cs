@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour {
     bool collideWithIce;
     bool collideWithBlock;
     bool colideWithItem;
-    bool invanurableState;           
+    public bool invanurableState;           
 
     // Use this for initialization
     void Awake () {
@@ -89,6 +89,7 @@ public class PlayerHealth : MonoBehaviour {
         // Turn off the movement and shooting scripts.
         //playerMovement.enabled = false;
         //playerShooting.enabled = false;
+		currentHealth = startingHealth;
 		UnityEngine.SceneManagement.SceneManager.LoadScene ("GameStart");
     }
     public void IncreaseHealth(int ammount)

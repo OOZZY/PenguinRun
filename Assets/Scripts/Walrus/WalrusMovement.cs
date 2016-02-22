@@ -38,6 +38,7 @@ public class WalrusMovement : MonoBehaviour {
 		if (other == player.GetComponent<Collider> ()) {
 			print ("COLLISION between player and walrus");
 			if (!player.GetComponent<PlayerHealth> ().isInvulnurable()) {
+				player.GetComponent<PlayerHealth> ().EnableinvanurableState ();
 				player.GetComponent<PlayerHealth> ().TakeDamage (1);
 				GameObject itemManager = GameObject.FindGameObjectWithTag("ItemManager");
 				itemManager.GetComponent<ItemManager> ().myStar.Collide ();
