@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Ui\BoneTimer.cs" />
     <Compile Include="Assets\Scripts\Ui\FishTimer.cs" />
+    <Compile Include="Assets\Scripts\Ui\HealthManager.cs" />
     <Compile Include="Assets\Scripts\Ui\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Ui\StarTimer.cs" />
     <Compile Include="Assets\Scripts\Ui\TapStart.cs" />

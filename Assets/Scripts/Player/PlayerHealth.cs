@@ -47,14 +47,14 @@ public class PlayerHealth : MonoBehaviour {
         damaged = false;
 
     }
-    public void TakeDamage(int amount)
+    public void TakeDamage(int ammount)
     {
         // Set the damaged flag so the screen will flash.
         damaged = true;
 
         // Reduce the current health by the damage amount.
-        currentHealth -= amount;
-
+        currentHealth -= ammount;
+        HealthManager.Decreasehealth(ammount);
         // Set the health bar's value to the current health.
         //healthSlider.value = currentHealth;
 
@@ -93,6 +93,7 @@ public class PlayerHealth : MonoBehaviour {
     public void IncreaseHealth(int ammount)
     {
         currentHealth = currentHealth + ammount;
+        HealthManager.Increasehealth(ammount);
 
     }
     // The ammount of ice that the player has to throw some back
