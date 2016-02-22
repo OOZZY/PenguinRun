@@ -40,10 +40,10 @@ public class IceBlock : MonoBehaviour {
 
                     break;
                 case Item.FISH:
-
+                    itemManager.FishCollide();
                     break;
                 case Item.FISH_BONE:
-
+                    itemManager.FishBoneCollide();
                     break;
                 case Item.HEART:
 
