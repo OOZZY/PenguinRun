@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class WalrusMovement : MonoBehaviour {
-	public Vector3 velocity = new Vector3(0f, 0f, 0.2f);
+	public Vector3 velocity = new Vector3(0f, 0f, 0.5f);
 	public Rigidbody player;
 
 	// Use this for initialization
@@ -21,6 +21,16 @@ public class WalrusMovement : MonoBehaviour {
 
 		Quaternion newRotation = new Quaternion (0, 0, 0, 1);
 		GetComponent<Rigidbody> ().MoveRotation (newRotation);
+
+		float distance = Mathf.Abs(player.transform.position.z - transform.position.z);
+		print (distance);
+		if (distance > 30) {
+			velocity.z = 1f;
+		} else if (distance < 9) {
+			velocity.z = 0.2f;
+		} else {
+			velocity.z = 0.5f;
+		}
 	}
 
 	void OnTriggerEnter(Collider other) {
