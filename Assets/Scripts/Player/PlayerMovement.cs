@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody playerRigidbody;
     int floorMask;
     float camRayLength = 100f;
+	public Vector3 prevPos = new Vector3(0, 0, 0);
 
     void Awake()
     {
@@ -27,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void Move(float h, float v)
     {
+		prevPos = playerRigidbody.position;
+
         movement.Set(h, 0f, v);
         movement = movement.normalized * speed * Time.deltaTime;
 

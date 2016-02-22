@@ -67,8 +67,12 @@ public class BlockGeneration : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		float zpos = player.transform.position.z + spawnDistance;
-		if (zpos - Mathf.Floor (zpos) < 0.05) {
-			SpawnBlock (zpos);
+		float zdelta = player.transform.position.z - player.GetComponent<PlayerMovement> ().prevPos.z;
+		print (zdelta);
+		if (zpos - Mathf.Floor (zpos) < 0.15) {
+			if (zdelta > 0.01) {
+				SpawnBlock (zpos);
+			}
 		}
 	}
 }
