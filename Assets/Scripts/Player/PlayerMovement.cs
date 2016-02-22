@@ -69,6 +69,10 @@ public class PlayerMovement : MonoBehaviour
     {
         speed = 10f;
     }
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
     public void IncreaseSpeed(float ammont)
     {
         speed += ammont;

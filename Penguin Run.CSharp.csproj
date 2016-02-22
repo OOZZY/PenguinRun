@@ -68,11 +68,12 @@
     <Compile Include="Assets\Scripts\Block\IceBlock.cs" />
     <Compile Include="Assets\Scripts\Block\IceBlockDestruction.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Player\ItemManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Ui\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\Ui\TapStart.cs" />
     <Compile Include="Assets\Scripts\Ui\rotate.cs" />
-    <Compile Include="Assets\Scripts\Ui\tapStart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Fonts\LuckiestGuy\LICENSE.txt" />

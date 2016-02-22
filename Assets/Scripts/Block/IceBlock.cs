@@ -8,14 +8,15 @@ public class IceBlock : MonoBehaviour {
     public float sinkSpeed = 2.5f;
     ParticleSystem hitParticles;                // Reference to the particle system that plays when the block is hit.
     CapsuleCollider capsuleCollider;            // Reference to the capsule collider.
-
+    GameObject myItems;
+    ItemManager itemManager;
     GameObject player;
     GameObject Ice;
     PlayerHealth playerHealth;
     PlayerMovement playerMovement;
     BoxCollider boxParent;
     BoxCollider[] boxes;
-    bool playerCollide;
+    bool playerCollide=false;
     // Use this for initialization
     void Awake()
     {
@@ -24,6 +25,8 @@ public class IceBlock : MonoBehaviour {
         playerMovement = player.GetComponent<PlayerMovement>();
         boxParent = GetComponent<BoxCollider>();
         boxes = GetComponentsInChildren<BoxCollider>();
+        myItems= GameObject.FindGameObjectWithTag("ItemManager");
+        itemManager = myItems.GetComponent<ItemManager>();
     }
 
     // Update is called once per frame
@@ -31,7 +34,32 @@ public class IceBlock : MonoBehaviour {
     {
         if (playerCollide)
         {
+            switch (item)
+            {
+                case Item.NONE:
 
+                    break;
+                case Item.FISH:
+
+                    break;
+                case Item.FISH_BONE:
+
+                    break;
+                case Item.HEART:
+
+                    break;
+                case Item.SKULL:
+
+                    break;
+
+                case Item.STAR:
+                    itemManager.StarCollide();
+                    break;
+                default:
+                    break;
+                
+            }
+            playerCollide = false;
 
         }
 
@@ -49,17 +77,19 @@ public class IceBlock : MonoBehaviour {
             }
             playerCollide = true;
  
-            playerMovement.IncreaseSpeed((float)+2);
+            //playerMovement.IncreaseSpeed((float)+2);
         }
     }
+    /*
     void OnTriggerExit(Collider other)
     {
         // If the exiting collider is the player...
         if (other.gameObject == player)
         {
             // ... the player is no longer in range.
-            //playerCollide = false;
-            playerMovement.ResetSpeed();
+            playerCollide = false;
+            
         }
     }
+    */
 }
