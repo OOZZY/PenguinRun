@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
-        //currentHealth = startingHealth;
+		currentHealth = startingHealth;
        //currentHealth = startingIce;
 	
 	}
@@ -89,6 +89,7 @@ public class PlayerHealth : MonoBehaviour {
         // Turn off the movement and shooting scripts.
         //playerMovement.enabled = false;
         //playerShooting.enabled = false;
+		UnityEngine.SceneManagement.SceneManager.LoadScene ("GameStart");
     }
     public void IncreaseHealth(int ammount)
     {
@@ -111,13 +112,18 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     // State thw player is in
-    public void EnableinvanurableState()
-    {
-        invanurableState = true;
-    }
-    public void DisableinvanurableState()
-    {
-        invanurableState = false;
-    }*/
+    */
+
+	public void EnableinvanurableState()
+	{
+		invanurableState = true;
+	}
+	public void DisableinvanurableState()
+	{
+		invanurableState = false;
+	}
+	public bool isInvulnurable() {
+		return invanurableState;
+	}
 
 }

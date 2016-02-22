@@ -110,7 +110,7 @@ public class ItemManager : MonoBehaviour {
     public Star myStar;
     public FishBone myBone;
     GameObject player;
-    //PlayerHealth playerHealth;
+    PlayerHealth playerHealth;
     PlayerMovement playerMovement;
 
     // Use this for initialization
@@ -119,7 +119,7 @@ public class ItemManager : MonoBehaviour {
         myStar = new Star(0, 0f);
         myBone = new FishBone(0, 0f);
         player = GameObject.FindGameObjectWithTag("Player");
-        //playerHealth = player.GetComponent<PlayerHealth>();
+        playerHealth = player.GetComponent<PlayerHealth>();
         playerMovement = player.GetComponent<PlayerMovement>();
 
     }
@@ -231,7 +231,7 @@ public class ItemManager : MonoBehaviour {
 
         if (starOver)
         {
-
+			playerHealth.DisableinvanurableState ();
         }
     }
     public void FishCollide()
@@ -242,8 +242,10 @@ public class ItemManager : MonoBehaviour {
     }
     public void StarCollide()
     {
-        myStar.Collide();
-        
+		if (!myStar.timerStarted) {
+			myStar.Collide ();
+			playerHealth.EnableinvanurableState ();
+		}
     }
     public void FishBoneCollide()
     {
