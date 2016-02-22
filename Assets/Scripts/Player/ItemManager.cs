@@ -128,6 +128,9 @@ public class ItemManager : MonoBehaviour {
 	void Update () {
 
         //update Hud Ui based on item ammounts
+        FishTimer.time = (int)myFish.timer;
+        BoneTimer.time = (int)myBone.timer;
+        StarTimer.time = (int)myStar.timer;
 
         //Update player based item ammounts;
 
@@ -172,17 +175,6 @@ public class ItemManager : MonoBehaviour {
         {
             starOver = true;
         }*/
-
-
-
-
-
-
-
-
-
-
-
 
         bool fishOver = false, boneOver = false, starOver = false;
 
