@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class WalrusMovement : MonoBehaviour {
-	public Vector3 velocity = new Vector3(0f, 0f, 0.5f);
+    // 0.5 1 0.2
+	public Vector3 velocity = new Vector3(0f, 0f, 0.2f);
 	public Rigidbody player;
 
 	// Use this for initialization
@@ -25,11 +26,11 @@ public class WalrusMovement : MonoBehaviour {
 		float distance = Mathf.Abs(player.transform.position.z - transform.position.z);
 		print (distance);
 		if (distance > 30) {
-			velocity.z = 1f;
+			velocity.z = 0.4f;
 		} else if (distance < 9) {
-			velocity.z = 0.2f;
+			velocity.z = 0.1f;
 		} else {
-			velocity.z = 0.5f;
+			velocity.z = 0.2f;
 		}
 	}
 

@@ -23,6 +23,6 @@ public class StarTimer : MonoBehaviour {
     void Update()
     {
         // Set the displayed text to be the word "Score" followed by the score value.
-        text.text = time + "S";
+        text.text = time + " S";
     }
 }
