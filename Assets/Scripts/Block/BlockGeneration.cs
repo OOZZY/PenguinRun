@@ -26,17 +26,17 @@ public class BlockGeneration : MonoBehaviour {
 			Transform child = null;
 			IceBlock.Item item = IceBlock.Item.NONE;
 			Quaternion newQuaternion = new Quaternion (0, 0, 0, 1);
-			if (num < 50) {
-			} else if (num < 60) {
+			if (num < 88) {
+			} else if (num < 90) {
 				child = fish;
 				item = IceBlock.Item.FISH;
-			} else if (num < 70) {
+			} else if (num < 93) {
 				child = fishBone;
 				item = IceBlock.Item.FISH_BONE;
-			} else if (num < 80) {
+			} else if (num < 95) {
 				child = heart;
 				item = IceBlock.Item.HEART;
-			} else if (num < 90) {
+			} else if (num < 98) {
 				child = skull;
 				item = IceBlock.Item.SKULL;
 				newQuaternion.y = -180;
