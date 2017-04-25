@@ -1,29 +1,21 @@
-# README #
+# PenguinRun
 
-This README would normally document whatever steps are necessary to get your application up and running.
+A third-person racing-like game.
 
-### What is this repository for? ###
+## Requirements
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Unity 5.x.x
 
-### How do I get set up? ###
+## Clone and Run
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+Clone into PenguinRun directory.
 
-### Contribution guidelines ###
+```
+$ git clone <url/to/penguinrun.git> PenguinRun
+```
 
-* Writing tests
-* Code review
-* Other guidelines
+After cloning, open and run with Unity.
 
-### Who do I talk to? ###
+## How to Play
 
-* Repo owner or admin
-* Other community or team contact
+Use arrow keys to move. Use space key to change perspective.
